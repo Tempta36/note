@@ -69,6 +69,7 @@ function getOs() {
    }
 
 }
+```
 
 ###创建具有兼容性的xmlHttpRequest对象
 ```js

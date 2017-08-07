@@ -5,81 +5,25 @@ td{
 }
 ```	
 
-###offset获取当前元素相对于父元素的位移，要获取当前元素相对于body的位移，使用下面的函数
-```js
-function offSet(curEle) {
-        var totalLeft = null;
-        var totalTop = null;
-        var par = curEle.offsetParent;
-        //首先把自己本身的相加
-        totalLeft += curEle.offsetLeft;
-        totalTop += curEle.offsetTop;
-        //现在开始一级一级往上查找，只要没有遇到body，我们就把父级参照物的边框和偏移相加
-        while (par){
-			//判断浏览器类型
-            if (navigator.userAgent.indexOf("MSIE 8.0") === -1){
-                //不是IE8我们才进行累加父级参照物的边框
-                totalTop += par.clientTop;
-                totalLeft += par.clientLeft;
-            }
-            //把父级参照物的偏移相加
-            totalTop += par.offsetTop;
-            totalLeft += par.offsetLeft;
-            par = par.offsetParent;
-        }
-        return {left: totalLeft,top: totalTop};
-        //返回一个数组，方便我们使用哦。
-    }
-```
 
-###判断浏览器类型
-```js
-function getOs() {
-
-    var OsObject = "";
-
-   if(navigator.userAgent.indexOf("MSIE")>0) { 
-
-        return "MSIE";
-
-   }
-
-   if(isFirefox=navigator.userAgent.indexOf("Firefox")>0){
-
-        return "Firefox";
-
-   }
-
-   if(isSafari=navigator.userAgent.indexOf("Safari")>0) {
-
-        return "Safari";
-
-   } 
-
-   if(isCamino=navigator.userAgent.indexOf("Camino")>0){
-
-        return "Camino";
-
-   }
-
-   if(isMozilla=navigator.userAgent.indexOf("Gecko/")>0){
-
-        return "Gecko";
-
-   }
-
-}
-```
-
-###创建具有兼容性的xmlHttpRequest对象
-```js
-if (window.XMLHttpRequest) { // Mozilla, Safari, ...
-
-    http_request = new XMLHttpRequest();
-
-} else if (window.ActiveXObject) { // IE
-
-    http_request = new ActiveXObject("Microsoft.XMLHTTP");
-
-}
-```
+###修改select右边的小三角
+```css
+    select {  
+      /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/  
+      border: solid 1px #000;  
+      
+      /*很关键：将默认的select选择框样式清除*/  
+      appearance:none;  
+      -moz-appearance:none;  
+      -webkit-appearance:none;  
+      
+      /*在选择框的最右侧中间显示小箭头图片*/  
+      background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;  
+      
+      /*为下拉小箭头留出一点位置，避免被文字覆盖*/  
+      padding-right: 14px;  
+    }  
+      
+    /*清除ie的默认选择框样式清除，隐藏下拉箭头*/  
+    select::-ms-expand { display: none; }  
+```    

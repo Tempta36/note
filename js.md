@@ -2,20 +2,20 @@
 ```js
 Math.max.call(null,arr);
 ```
-
+============================================================
 ###将arr2中的内容push到arr1中
 ```js
 Array.prototype.push.apply(arr1,arr2); 
 ```	
-
+============================================================
 ###	Javascript报uncaught typeerror illegal invocation错误 
 在用ajax向后台传值的时候把一个对象当作参数传上去了
- 
+============================================================ 
 ###向Json里面追加键值对
 ```js
 json['fruit']='apple';
 ``` 
- 
+============================================================ 
 ```js 
 $.ajax({
 	async:false,
@@ -23,27 +23,27 @@ $.ajax({
 	processData:false
 });
 ```
-async:false的原因
-表示同步请求。默认情况下，发送的数据将被转换为对象（从技术角度来讲并非字符串）以配合默认内容类型
-"application/x-www-form-urlencoded"。
+>async:false的原因
+>>表示同步请求。默认情况下，发送的数据将被转换为对象（从技术角度来讲并非字符串）以配合默认内容类型
+>>"application/x-www-form-urlencoded"。
 
-contentType:false的原因
-因为对于上传文件，我们没有在使用原有的 http 协议，所以 multipart/form-data 请求是基于 http 原有的请求
-方式 post 而来的.那么来说说这个全新的请求方式与 post 的区别：
-    请求头的不同。对于上传文件的请求，contentType = multipart/form-data是必须的，而 post 则不是，毕竟
-	post 又不是只上传文件～。
-    请求体不同。这里的不同也就是指前者在发送的每个字段内容之间必须要使用分界符来隔开，比如文件的内容和
-	文本的内容就需要分隔开，不然服务器就没有办法正常的解析文件，而后者 post 当然就没有分界符直接以
-	name = "value"的形似发送。
-说到这，我们发现在 JQuery ajax() 方法中我们使contentType = false,这不是冲突了吗？这当然没有，因为当我们
-查看这时的 Request headers，会发现还是有分界符。这就是因为当我们在 form 标签中设置了
-enctype = “multipart/form-data”,这样请求中的 contentType 就会默认为 multipart/form-data 。而我们在
- ajax 中 contentType 设置为 false 是为了避免 JQuery 对其操作，从而失去分界符，而使服务器不能正常解析文
- 件。
+>contentType:false的原因
+>>因为对于上传文件，我们没有在使用原有的 http 协议，所以 multipart/form-data 请求是基于 http 原有的请求
+>>方式 post 而来的.那么来说说这个全新的请求方式与 post 的区别：
+>>>    请求头的不同。对于上传文件的请求，contentType = multipart/form-data是必须的，而 post 则不是，毕竟
+>>>	post 又不是只上传文件～。
+>>>    请求体不同。这里的不同也就是指前者在发送的每个字段内容之间必须要使用分界符来隔开，比如文件的内容和
+>>>	文本的内容就需要分隔开，不然服务器就没有办法正常的解析文件，而后者 post 当然就没有分界符直接以
+>>>	name = "value"的形似发送。
+>>说到这，我们发现在 JQuery ajax() 方法中我们使contentType = false,这不是冲突了吗？这当然没有，因为当我们
+>>查看这时的 Request headers，会发现还是有分界符。这就是因为当我们在 form 标签中设置了
+>>enctype = “multipart/form-data”,这样请求中的 contentType 就会默认为 multipart/form-data 。而我们在
+ >>ajax 中 contentType 设置为 false 是为了避免 JQuery 对其操作，从而失去分界符，而使服务器不能正常解析文
+ >>件。
  
-processData:false的原因
-不序列化data参数 
-
+>processData:false的原因
+>>不序列化data参数 
+============================================================
 ###判断鼠标点击位置是否在指定元素区域内(可用于点击遮罩层使元素消失)
 ```js
 function isInElement(obj){
@@ -52,7 +52,7 @@ function isInElement(obj){
     (obj.height()+ obj.offset().top));
 }
 ```
-
+============================================================
 ###将时间戳改为普通日期格式
 ```js
 function getLocalTime(ns) {
@@ -60,7 +60,7 @@ function getLocalTime(ns) {
     return ns;
 }
 ```
-
+============================================================
 ###事件冒泡
 ```js
 function stopBubble(e) {
@@ -73,7 +73,7 @@ function stopBubble(e) {
         window.event.cancelBubble = true;
 }
 ```
-
+============================================================
 ###浏览器默认行为
 ```js
 function stopDefault( e ) {
@@ -86,7 +86,7 @@ function stopDefault( e ) {
     return false;
 }
 ```
-
+============================================================
 ###offset获取当前元素相对于父元素的位移，要获取当前元素相对于body的位移，使用下面的函数
 ```js
 function offSet(curEle) {
@@ -113,7 +113,7 @@ function offSet(curEle) {
         //返回一个数组，方便我们使用哦。
     }
 ```
-
+============================================================
 ###判断浏览器类型
 ```js
 function getOs() {
@@ -135,7 +135,7 @@ function getOs() {
    }
 }
 ```
-
+============================================================
 ###创建具有兼容性的xmlHttpRequest对象
 ```js
 if (window.XMLHttpRequest) { // Mozilla, Safari, ...
@@ -148,10 +148,10 @@ if (window.XMLHttpRequest) { // Mozilla, Safari, ...
 
 }
 ```
-
+============================================================
 ###继上次在使用jquery的ajax操作碰到程序请求成功：  
-####状态码返回200--表明服务器正常响应了客户端的请求；  
-####通过firebug和IE的httpWatcher可以看出服务器端返回了正常的数据，并且是符合业务逻辑的数据。  
+>状态码返回200--表明服务器正常响应了客户端的请求；  
+>通过firebug和IE的httpWatcher可以看出服务器端返回了正常的数据，并且是符合业务逻辑的数据。  
 但是，程序就是不进入到回调函数success: function(data){****}而是进入到error: function(data){***}  
 记得上次是因为存在跨域访问的问题导致。这次查看不存在跨域的问题。此时就很是不解。  
 事情的来源是这样的： 后台的配置管理模块中有一块是关于国际化的配置，增加国际化描述等等，查询国际化
@@ -164,8 +164,9 @@ if (window.XMLHttpRequest) { // Mozilla, Safari, ...
 可能。就放弃了这种想法。  
 有转向，重新审视数据。 但是发现数据从中间换行了，没太在意。 在纠结了一会儿后问一同事，指出数据可能
 多了一个"回车键"，在其指点下到数据库表中再次查看该条数据发现有一个字段的值多了一个"回车键"。删除后，
-一切恢复正常。  
+一切恢复正常。 
 
+============================================================
 ###ajax post表单后 url会自动改变。如下：
 提交前：localhost:3000/
 提交后：localhost:3000/?user%5Bname%5D=%E5%A4%A7%E6%B4%92%E5%BA%97

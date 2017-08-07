@@ -9,9 +9,9 @@ Math.max.call(null,arr);
 Array.prototype.push.apply(arr1,arr2); 
 ```	
 ============================================================
+>javascript报`uncaught typeerror illegal invocation`错误 
+>在用ajax向后台传值的时候把一个对象当作参数传上去了
 
-Javascript报uncaught typeerror illegal invocation错误 
-在用ajax向后台传值的时候把一个对象当作参数传上去了
 ============================================================
 
 向Json里面追加键值对

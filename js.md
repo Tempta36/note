@@ -1,20 +1,20 @@
-###找出数组中最大的元素
+找出数组中最大的元素
 ```js
 Math.max.call(null,arr);
 ```
 ============================================================
 
-###将arr2中的内容push到arr1中
+将arr2中的内容push到arr1中
 ```js
 Array.prototype.push.apply(arr1,arr2); 
 ```	
 ============================================================
 
-###Javascript报uncaught typeerror illegal invocation错误 
+Javascript报uncaught typeerror illegal invocation错误 
 在用ajax向后台传值的时候把一个对象当作参数传上去了
 ============================================================
 
-###向Json里面追加键值对
+向Json里面追加键值对
 ```js
 json['fruit']='apple';
 ``` 
@@ -49,7 +49,7 @@ $.ajax({
 >>不序列化data参数 
 ============================================================
 
-###判断鼠标点击位置是否在指定元素区域内(可用于点击遮罩层使元素消失)
+判断鼠标点击位置是否在指定元素区域内(可用于点击遮罩层使元素消失)
 ```js
 function isInElement(obj){
     return (event.clientX > obj.offset().left && event.clientX < (obj.width()+
@@ -59,7 +59,7 @@ function isInElement(obj){
 ```
 ============================================================
 
-###将时间戳改为普通日期格式
+将时间戳改为普通日期格式
 ```js
 function getLocalTime(ns) {
     console.log(new Date(parseInt(ns) ).toLocaleString().substr(0,17));
@@ -68,7 +68,7 @@ function getLocalTime(ns) {
 ```
 ============================================================
 
-###事件冒泡
+事件冒泡
 ```js
 function stopBubble(e) {
 //如果提供了事件对象，则这是一个非IE浏览器
@@ -82,7 +82,7 @@ function stopBubble(e) {
 ```
 ============================================================
 
-###浏览器默认行为
+浏览器默认行为
 ```js
 function stopDefault( e ) {
     //阻止默认浏览器动作(W3C)
@@ -96,7 +96,7 @@ function stopDefault( e ) {
 ```
 ============================================================
 
-###offset获取当前元素相对于父元素的位移，要获取当前元素相对于body的位移，使用下面的函数
+offset获取当前元素相对于父元素的位移，要获取当前元素相对于body的位移，使用下面的函数
 ```js
 function offSet(curEle) {
         var totalLeft = null;
@@ -124,7 +124,7 @@ function offSet(curEle) {
 ```
 ============================================================
 
-###判断浏览器类型
+判断浏览器类型
 ```js
 function getOs() {
     var OsObject = "";
@@ -147,7 +147,7 @@ function getOs() {
 ```
 ============================================================
 
-###创建具有兼容性的xmlHttpRequest对象
+创建具有兼容性的xmlHttpRequest对象
 ```js
 if (window.XMLHttpRequest) { // Mozilla, Safari, ...
 
@@ -161,7 +161,7 @@ if (window.XMLHttpRequest) { // Mozilla, Safari, ...
 ```
 ============================================================
 
-###继上次在使用jquery的ajax操作碰到程序请求成功：  
+继上次在使用jquery的ajax操作碰到程序请求成功：  
 >状态码返回200--表明服务器正常响应了客户端的请求；  
 >通过firebug和IE的httpWatcher可以看出服务器端返回了正常的数据，并且是符合业务逻辑的数据。  
 但是，程序就是不进入到回调函数success: function(data){****}而是进入到error: function(data){***}  
@@ -180,7 +180,7 @@ if (window.XMLHttpRequest) { // Mozilla, Safari, ...
 
 ============================================================
 
-###ajax post表单后 url会自动改变。如下：
+ajax post表单后 url会自动改变。如下：
 >提交前：localhost:3000/
 >提交后：localhost:3000/?user%5Bname%5D=%E5%A4%A7%E6%B4%92%E5%BA%97
 >>解决方法1：

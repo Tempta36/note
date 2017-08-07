@@ -3,19 +3,23 @@
 Math.max.call(null,arr);
 ```
 ============================================================
+
 ###将arr2中的内容push到arr1中
 ```js
 Array.prototype.push.apply(arr1,arr2); 
 ```	
 ============================================================
-###	Javascript报uncaught typeerror illegal invocation错误 
+
+###Javascript报uncaught typeerror illegal invocation错误 
 在用ajax向后台传值的时候把一个对象当作参数传上去了
-============================================================ 
+============================================================
+
 ###向Json里面追加键值对
 ```js
 json['fruit']='apple';
 ``` 
 ============================================================ 
+
 ```js 
 $.ajax({
 	async:false,
@@ -44,6 +48,7 @@ $.ajax({
 >processData:false的原因
 >>不序列化data参数 
 ============================================================
+
 ###判断鼠标点击位置是否在指定元素区域内(可用于点击遮罩层使元素消失)
 ```js
 function isInElement(obj){
@@ -53,6 +58,7 @@ function isInElement(obj){
 }
 ```
 ============================================================
+
 ###将时间戳改为普通日期格式
 ```js
 function getLocalTime(ns) {
@@ -61,6 +67,7 @@ function getLocalTime(ns) {
 }
 ```
 ============================================================
+
 ###事件冒泡
 ```js
 function stopBubble(e) {
@@ -74,6 +81,7 @@ function stopBubble(e) {
 }
 ```
 ============================================================
+
 ###浏览器默认行为
 ```js
 function stopDefault( e ) {
@@ -87,6 +95,7 @@ function stopDefault( e ) {
 }
 ```
 ============================================================
+
 ###offset获取当前元素相对于父元素的位移，要获取当前元素相对于body的位移，使用下面的函数
 ```js
 function offSet(curEle) {
@@ -114,6 +123,7 @@ function offSet(curEle) {
     }
 ```
 ============================================================
+
 ###判断浏览器类型
 ```js
 function getOs() {
@@ -136,6 +146,7 @@ function getOs() {
 }
 ```
 ============================================================
+
 ###创建具有兼容性的xmlHttpRequest对象
 ```js
 if (window.XMLHttpRequest) { // Mozilla, Safari, ...
@@ -149,6 +160,7 @@ if (window.XMLHttpRequest) { // Mozilla, Safari, ...
 }
 ```
 ============================================================
+
 ###继上次在使用jquery的ajax操作碰到程序请求成功：  
 >状态码返回200--表明服务器正常响应了客户端的请求；  
 >通过firebug和IE的httpWatcher可以看出服务器端返回了正常的数据，并且是符合业务逻辑的数据。  
@@ -167,10 +179,11 @@ if (window.XMLHttpRequest) { // Mozilla, Safari, ...
 一切恢复正常。 
 
 ============================================================
+
 ###ajax post表单后 url会自动改变。如下：
-提交前：localhost:3000/
-提交后：localhost:3000/?user%5Bname%5D=%E5%A4%A7%E6%B4%92%E5%BA%97
-####解决方法1：
+>提交前：localhost:3000/
+>提交后：localhost:3000/?user%5Bname%5D=%E5%A4%A7%E6%B4%92%E5%BA%97
+>>解决方法1：
 ```js
 $('#form-signup').on('submit', function(ev) {
   ev.stopPropagation();
@@ -178,9 +191,9 @@ $('#form-signup').on('submit', function(ev) {
   ...
 });
 ```
-####解决方法2：
-form表单的那个button按钮注意下type
+>>解决方法2：
+>>>form表单的那个button按钮注意下type
 ```html
 <button type="button">submit<button>
 ```
-这样做虽然也可以阻止，但是不建议这么做，有碍于语义化和不能键盘enter操作
+>>>这样做虽然也可以阻止，但是不建议这么做，有碍于语义化和不能键盘enter操作
